@@ -5,10 +5,10 @@ name: kube-workflow-devhub-e2e-test-id-1
             - devhub-e2e-test-id-1
     workflow_dispatch: {}
 env:
-    ACR_RESOURCE_GROUP: devhub-runner-nviovxzm
+    ACR_RESOURCE_GROUP: devhub-runner-ltsddjba
     AZURE_CONTAINER_REGISTRY: devhubrunnertest
-    CLUSTER_NAME: devhub-runner-nviovxzm
-    CLUSTER_RESOURCE_GROUP: devhub-runner-nviovxzm
+    CLUSTER_NAME: devhub-runner-ltsddjba
+    CLUSTER_RESOURCE_GROUP: devhub-runner-ltsddjba
     CONTAINER_NAME: kubeimage
     DEPLOYMENT_MANIFEST_PATH: |
         manifests/deployment.yaml
