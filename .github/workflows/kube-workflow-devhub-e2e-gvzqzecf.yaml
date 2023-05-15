@@ -2,7 +2,7 @@ name: pleasework
 "on":
     push:
         branches:
-            - main
+            - kingoliversosmart
     workflow_dispatch: {}
 env:
     ACR_RESOURCE_GROUP: devhub-e2e-gvzqzecf
