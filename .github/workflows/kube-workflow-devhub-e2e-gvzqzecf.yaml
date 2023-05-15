@@ -1,4 +1,4 @@
-name: kube-workflow-devhub-e2e-gvzqzecf
+name: pleasework
 "on":
     push:
         branches:
