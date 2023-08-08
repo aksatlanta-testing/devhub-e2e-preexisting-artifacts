@@ -1,4 +1,4 @@
-FROM golang
+FROM golang:1.18
 ENV PORT 1323
 EXPOSE 1323
 
