@@ -1,8 +1,8 @@
 image:
-  repository: "devhubrunnertest.azurecr.io/kubeimage"
+  repository: "go-echo7061344b-b176-4a56-a8a3-7f82b7f77188"
   pullPolicy: IfNotPresent
   tag: "latest"
 service:
   annotations: {}
   type: LoadBalancer
-  port: 80
+  port: "1323"
