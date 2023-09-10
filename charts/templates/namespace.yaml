@@ -1,0 +1,10 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: {{ .Values.namespace }}
+  labels:
+    {{- include "go-echof689e79b-c11b-455e-909b-8d77de44aa9a.labels" . | nindent 4 }}
+    openservicemesh.io/monitored-by: osm
+  annotations:
+    openservicemesh.io/sidecar-injection: enabled
+
