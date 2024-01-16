@@ -4,6 +4,7 @@ metadata:
   name: go-echo
   labels:
     app: go-echo
+  namespace: devhub-e2e-test-id-1
 spec:
   replicas: 1
   selector:
@@ -16,6 +17,6 @@ spec:
     spec:
       containers:
         - name: go-echo
-          image: devhubrunnertest.azurecr.io/kubeimage
+          image: devhube2ed505215da56343e6bcb58b59114bd061.azurecr.io/kubeimage:latest:latest
           ports:
             - containerPort: 1323
