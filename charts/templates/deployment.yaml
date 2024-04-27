@@ -1,16 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "go-echo.fullname" . }}
+  name: {{ include "go-echo83f76193-95e9-4d1e-877b-7660c8300c4b.fullname" . }}
   labels:
-    {{- include "go-echo.labels" . | nindent 4 }}
+    {{- include "go-echo83f76193-95e9-4d1e-877b-7660c8300c4b.labels" . | nindent 4 }}
+  namespace: {{ .Values.namespace }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "go-echo.selectorLabels" . | nindent 6 }}
+      {{- include "go-echo83f76193-95e9-4d1e-877b-7660c8300c4b.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,7 +19,8 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "go-echo.selectorLabels" . | nindent 8 }}
+        {{- include "go-echo83f76193-95e9-4d1e-877b-7660c8300c4b.selectorLabels" . | nindent 8 }}
+      namespace: {{ .Values.namespace }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
