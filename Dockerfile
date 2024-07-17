@@ -1,12 +1,14 @@
-FROM golang
+FROM golang:1.18 AS builder
 ENV PORT 1323
 EXPOSE 1323
 
-WORKDIR /go/src/app
+WORKDIR /build
+COPY go.mod go.sum ./
+RUN go mod download && go mod verify
 COPY . .
+RUN CGO_ENABLED=0 GOOS=linux go build -v -o app-binary
 
-RUN go mod vendor
-RUN go build -v -o app
-RUN mv ./app /go/bin/
-
-CMD ["app"]
+FROM gcr.io/distroless/static-debian12
+WORKDIR /app
+COPY --from=builder /build/app-binary . 
+CMD ["/app/app-binary"]
