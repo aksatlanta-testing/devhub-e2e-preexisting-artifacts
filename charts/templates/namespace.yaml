@@ -1,0 +1,11 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: {{ .Values.namespace }}
+  labels:
+    {{- include "go-echo1f958a49-75fa-4659-a892-2905ba7e95b0.labels" . | nindent 4 }}
+    openservicemesh.io/monitored-by: osm
+    kubernetes.azure.com/generator: devhub
+  annotations:
+    openservicemesh.io/sidecar-injection: enabled
+
