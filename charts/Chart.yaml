@@ -1,5 +1,5 @@
 apiVersion: v2
-name: go-echo
+name: go-echo1847f16f-4b4d-4f12-a666-7ab1e208ded8
 description: A Helm chart for Kubernetes
 
 # A chart can be either an 'application' or a 'library' chart.
