@@ -1,24 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "go-echo.fullname" . }}
+  name: {{ include "go-echo6ccf2804-a00c-4fd5-8485-1f2b4dd5ca86.fullname" . }}
   labels:
-    {{- include "go-echo.labels" . | nindent 4 }}
+    {{- include "go-echo6ccf2804-a00c-4fd5-8485-1f2b4dd5ca86.labels" . | nindent 4 }}
+    kubernetes.azure.com/generator: {{ .Values.generatorLabel }}
+  namespace: {{ .Values.namespace }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
-  {{- end }}
+  {{- end }} 
   selector:
     matchLabels:
-      {{- include "go-echo.selectorLabels" . | nindent 6 }}
+      {{- include "go-echo6ccf2804-a00c-4fd5-8485-1f2b4dd5ca86.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
       annotations:
         {{- toYaml . | nindent 8 }}
-      {{- end }}
+      {{- end }} 
       labels:
-        {{- include "go-echo.selectorLabels" . | nindent 8 }}
+        {{- include "go-echo6ccf2804-a00c-4fd5-8485-1f2b4dd5ca86.selectorLabels" . | nindent 8 }}
+      namespace: {{ .Values.namespace }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
