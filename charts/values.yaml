@@ -1,16 +1,16 @@
-# Default values for go-echo.
+# Default values for go-echoee793e09-a263-4b46-b5e4-6ed9a2f69235.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
-
 replicaCount: 1
+
+namespace: helm-devhub-e2e-test-id-1
 
 containerPort: 1323
 
 image:
-  repository: devhubrunnertest.azurecr.io/kubeimage
-  pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  repository: devhube2e1287761c1ed04fcea23ab0d1160f4941.azurecr.io/helmimage:latest
+  tag: latest
+  pullPolicy: Always
 
 imagePullSecrets: []
 nameOverride: ""
@@ -18,12 +18,10 @@ fullnameOverride: ""
 
 podAnnotations: {}
 
-podSecurityContext:
-  {}
+podSecurityContext: {}
   # fsGroup: 2000
 
-securityContext:
-  {}
+securityContext: {}
   # capabilities:
   #   drop:
   #   - ALL
@@ -34,10 +32,9 @@ securityContext:
 service:
   annotations: {}
   type: LoadBalancer
-  port: 80
+  port: 1323
 
-resources:
-  {}
+resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
@@ -61,3 +58,5 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+generatorLabel: devhub
