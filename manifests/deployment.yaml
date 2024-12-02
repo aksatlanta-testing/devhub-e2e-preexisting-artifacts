@@ -4,6 +4,8 @@ metadata:
   name: go-echo
   labels:
     app: go-echo
+    kubernetes.azure.com/generator: devhub
+  namespace: devhub-e2e-test-id-1
 spec:
   replicas: 1
   selector:
@@ -16,6 +18,7 @@ spec:
     spec:
       containers:
         - name: go-echo
-          image: devhubrunnertest.azurecr.io/kubeimage
+          image: devhube2ecc54d4a55955408ab75e3a22176ccb7a.azurecr.io/kubeimage:latest:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 1323
