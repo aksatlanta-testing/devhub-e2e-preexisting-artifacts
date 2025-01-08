@@ -1,16 +1,10 @@
-{{/*
-Expand the name of the chart.
-*/}}
-{{- define "go-echo.name" -}}
+
+{{- define "go-echodba0dfd6-71de-4113-8c8b-e084e5fb846f.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
-{{/*
-Create a default fully qualified app name.
-We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
-If release name contains chart name it will be used as a full name.
-*/}}
-{{- define "go-echo.fullname" -}}
+
+{{- define "go-echodba0dfd6-71de-4113-8c8b-e084e5fb846f.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -23,29 +17,23 @@ If release name contains chart name it will be used as a full name.
 {{- end }}
 {{- end }}
 
-{{/*
-Create chart name and version as used by the chart label.
-*/}}
-{{- define "go-echo.chart" -}}
+
+{{- define "go-echodba0dfd6-71de-4113-8c8b-e084e5fb846f.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
-{{/*
-Common labels
-*/}}
-{{- define "go-echo.labels" -}}
-helm.sh/chart: {{ include "go-echo.chart" . }}
-{{ include "go-echo.selectorLabels" . }}
+
+{{- define "go-echodba0dfd6-71de-4113-8c8b-e084e5fb846f.labels" -}}
+helm.sh/chart: {{ include "go-echodba0dfd6-71de-4113-8c8b-e084e5fb846f.chart" . }}
+{{ include "go-echodba0dfd6-71de-4113-8c8b-e084e5fb846f.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
 
-{{/*
-Selector labels
-*/}}
-{{- define "go-echo.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "go-echo.name" . }}
+
+{{- define "go-echodba0dfd6-71de-4113-8c8b-e084e5fb846f.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "go-echodba0dfd6-71de-4113-8c8b-e084e5fb846f.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
