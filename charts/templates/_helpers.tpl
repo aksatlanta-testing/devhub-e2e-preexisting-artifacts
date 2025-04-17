@@ -1,16 +1,10 @@
-{{/*
-Expand the name of the chart.
-*/}}
-{{- define "go-echo.name" -}}
+
+{{- define "go-echo012cc32d-197b-4d79-ab45-8c53d6af7f45.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
-{{/*
-Create a default fully qualified app name.
-We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
-If release name contains chart name it will be used as a full name.
-*/}}
-{{- define "go-echo.fullname" -}}
+
+{{- define "go-echo012cc32d-197b-4d79-ab45-8c53d6af7f45.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -23,29 +17,24 @@ If release name contains chart name it will be used as a full name.
 {{- end }}
 {{- end }}
 
-{{/*
-Create chart name and version as used by the chart label.
-*/}}
-{{- define "go-echo.chart" -}}
+
+{{- define "go-echo012cc32d-197b-4d79-ab45-8c53d6af7f45.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
-{{/*
-Common labels
-*/}}
-{{- define "go-echo.labels" -}}
-helm.sh/chart: {{ include "go-echo.chart" . }}
-{{ include "go-echo.selectorLabels" . }}
+
+{{- define "go-echo012cc32d-197b-4d79-ab45-8c53d6af7f45.labels" -}}
+helm.sh/chart: {{ include "go-echo012cc32d-197b-4d79-ab45-8c53d6af7f45.chart" . }}
+{{ include "go-echo012cc32d-197b-4d79-ab45-8c53d6af7f45.selectorLabels" . }}
+kubernetes.azure.com/generator: {{ .Values.generatorLabel }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
 
-{{/*
-Selector labels
-*/}}
-{{- define "go-echo.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "go-echo.name" . }}
+
+{{- define "go-echo012cc32d-197b-4d79-ab45-8c53d6af7f45.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "go-echo012cc32d-197b-4d79-ab45-8c53d6af7f45.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
